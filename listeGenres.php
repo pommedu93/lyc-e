@@ -68,7 +68,7 @@ $lesgenres=$req->fetchAll();
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">genres</a>
-          <a href="listeGenres.php">genre</a>
+          <a class="listeGenres.php">genre</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
