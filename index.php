@@ -63,7 +63,7 @@ Auto
  <button type="button" class="btn btn-secondary">Secondary</button></div> </div> <div class="col-md-6"> <div class="h-100 p-5 bg-body-tertiary border rounded-3"> 
     <h2>Add borders</h2> 
     <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p> <button class="btn btn-outline-secondary" type="button">Example button</button> </div> </div> </div> <footer class="pt-3 mt-4 text-body-secondary border-top">
-&copy; 2025 </footer> 
+
 </div> 
 </main>   
 <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" class="astro-vvvwv3sm"></script>  </body> </html>
@@ -87,5 +87,6 @@ Auto
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+&copy; 2025 </footer> 
 </body>
 </html>
