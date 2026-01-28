@@ -1,7 +1,7 @@
 <?php
 $hostnom = 'host=btssio.dedyn.io';
-$usernom = 'votreNomdeUser';
-$password = 'votreMotDePasse';
+$usernom = 'MAROUFZ';
+$password = '20072006';
 $bdd = 'biblio';
 
 try {
