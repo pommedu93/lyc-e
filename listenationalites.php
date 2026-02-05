@@ -4,7 +4,7 @@ include "connexionPDO.php";
 $req=$monPdo->prepare("select * from nationalite");
 $req->setFetchMode(PDO::FETCH_OBJ);
 $req->execute();
-$lesNationalites=$req->fetchALL();
+$lesnationalites=$req->fetchALL();
 ?>
 
 <main role="main">
@@ -13,7 +13,7 @@ $lesNationalites=$req->fetchALL();
 <table class="table table-success table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
@@ -39,7 +39,16 @@ $lesNationalites=$req->fetchALL();
       <td>@social</td>
     </tr>
   </tbody>
-</table>
+ <?php foreach($$lesnationalites as $nationalite)
+  echo "<tr>";
+  echo"<td>$nationalite->num</td>";
+  echo"<td>$nationalite->libelle</td>";
+  echo"<td></td>";
+
+  echo"</tr>";
+
+?>
+  </table>
 
 </div>
 </main>
