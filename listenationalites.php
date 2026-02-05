@@ -39,7 +39,7 @@ $lesnationalites=$req->fetchALL();
       <td>@social</td>
     </tr>
   </tbody>
- <?php foreach($$lesnationalites as $nationalite)
+ <?php foreach($lesnationalites as $nationalite)
   echo "<tr>";
   echo"<td>$nationalite->num</td>";
   echo"<td>$nationalite->libelle</td>";
