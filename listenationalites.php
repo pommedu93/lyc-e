@@ -7,46 +7,30 @@ $req->execute();
 $lesnationalites=$req->fetchALL();
 ?>
 
-<main role="main">
-<div class="container">
 
-<table class="table table-success table-striped">
+<div class="container mt-5">
+  <div class="col-9"><h2>Liste des nationalités</h2>
+  <div class="clo-3"><a href="" class='btn btn-sucess'><i class="fas fa-plus-circle"></i>Créer une nationalité</a>
+  <table class="table table-striped">
   <thead>
     <tr>
       
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Numéro</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
+ 
   </tbody>
- <?php foreach($lesnationalites as $nationalite)
+ <?php foreach($lesnationalites as $nationalite){
   echo "<tr>";
-  echo"<td>$nationalite->num</td>";
-  echo"<td>$nationalite->libelle</td>";
-  echo"<td></td>";
-
+  echo"<td>$nationalite->num</th>";
+  echo"<td>$nationalite->libelle</th>";
+  echo"<td>
+      <a href='' class='btn btn-primary'><i class='fas fa-plus-circle'></i>Créer une nationalité</a>
+  </td>";
   echo"</tr>";
-
+}
 ?>
   </table>
 
