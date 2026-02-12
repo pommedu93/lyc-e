@@ -27,7 +27,10 @@ $lesnationalites=$req->fetchALL();
   echo"<td>$nationalite->num</th>";
   echo"<td>$nationalite->libelle</th>";
   echo"<td>
-      <a href='' class='btn btn-primary'><i class='fas fa-plus-circle'></i>Créer une nationalité</a>
+      <a href='' class='btn btn-primary'><i class='fas fa-pen'></i></a>
+  </td>";
+echo"<td>
+    <a href='' class='btn btn-danger'><i class='fas fa-'></i</a>
   </td>";
   echo"</tr>";
 }
