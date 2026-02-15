@@ -13,8 +13,8 @@ if($action == "Modifier"){
 ?>
 
 <div class="container mt-5">
-<h2 class='pt-3 text-center'><<?php echo $action ?> une nationalité</h2>
-    <form action="valideformNationalite.php" method="post" class="col-md-6 offset-md-3">
+<h2 class='pt-3 text-center'><?php echo $action ?> une nationalité</h2>
+    <form action="valideformNationalite.php?action=<?php echo $action ?>" method="post" class="col-md-6 offset-md-3">
         <div class="form-group">
             <label for='libelle'> libellé </label>
             <input type="text" class='form-control' id='libelle' placeholder='Saisir le libellé' name='libelle'
