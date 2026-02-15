@@ -7,7 +7,9 @@ $req=$monPdo->prepare("insert into nationalite(libelle) values(:libelle)");
 $req->bindParam(':libelle', $libelle);
 $req->execute();
 echo'<div class="container mt-5">';
-
+echo '<div class="row">
+    <div class="col mt-3">';
+  
 if($nb ==1){
     echo'<div class="alert alert-success" role="alert">
  La nationalité est ajoutée
