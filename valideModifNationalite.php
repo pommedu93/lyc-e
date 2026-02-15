@@ -21,7 +21,7 @@ if($nb ==1){
 
 }
 ?>
-<a href="lyc-e/listenationalites.php" class="btn btn-primary">Revenir à la liste des nationalité</a>
+<a href="listenationalites.php" class="btn btn-primary">Revenir à la liste des nationalité</a>
 
 </div>
 
