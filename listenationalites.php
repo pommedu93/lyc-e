@@ -1,10 +1,31 @@
 <?php 
 include "header.php";
 include "connexionPDO.php";
-$req=$monPdo->prepare("select n.num, n.libelle as 'libNation', c.libelle as 'libContinent' from nationalite n, continent c where n.numContinent=c.num order by n.libelle ");
+//liste des nationalités
+$libelle="";
+$continentSelec="Tous";
+//construction de la requete
+$texteReq="select n.num, n.libelle as 'libNation', c.libelle as 'libContinent' from nationalite n, continent c where n.numContinent=c.num";
+if(!empty($_GET)){
+  $libelle=$_GET['libelle'];
+  $continentSelec=$_GET['continent'];
+  if($libelle != "") {$texteReq.=" and n.libelle like '%".$libelle."%'" ;}
+  if($continentSelec != "Tous") {$texteReq.=" and c.num =".$continentSelec;}
+
+  }
+$texteReq.="order by n.libelle";
+
+$req=$monPdo->prepare($texteReq);
 $req->setFetchMode(PDO::FETCH_OBJ);
 $req->execute();
-$lesnationalites=$req->fetchALL();
+$lesnationalites=$req->fetchALL(); 
+
+//liste des continents
+$reqContinent=$monPdo->prepare("select * from continent");
+$reqContinent->setFetchMode(PDO::FETCH_OBJ);
+$reqContinent->execute();
+$lescontinents=$reqContinent->fetchall();
+
 
 if(!empty($_SESSION['message'])){
   $mesMessages=$_SESSION['message'] ;
@@ -25,14 +46,45 @@ if(!empty($_SESSION['message'])){
 ?>
 
 
+
+
+
 <div class="container mt-5">
+
 <div class="row pt-3">
   <div class="col-9"><h2>Liste des nationalités</h2></div>
   <div class="clo-3"><a href="formNationalite.php?action=Ajouter" class='btn btn-sucess'><i class="fas fa-plus-circle"></i>Créer une nationalité</a></div>
 
 </div>
 
-  <table class="table table-striped">
+
+  <form action="" method="get"class='border border-primary rounded p-3 mt-3 mb-3'>
+  <div class="row">
+      <div class="col">
+          <input type="text" class='form-control' id='libelle' placeholder='Saisir le libellé' name='libelle'value="<?php echo $libelle; ?>">
+      </div>
+      <div class="col">
+          <select name="continent" class='form-control'>
+                  <?php 
+                       echo "<option value='Tous'>Tous les continents</option>";
+                  foreach($lescontinents as $continent) {
+                      $selection=$continent->num ==$continentSelec ?'selcted':'';
+                      echo "<option value='$continent->num' $selection>$continent->libelle</option>";
+                  }
+                  ?>
+          </select>
+
+      </div>
+      <div class="col">
+          <button type="submit" class="btn btn-success btn-block">Rechercher</button>
+
+      </div>
+    </div>
+  </form>
+  
+
+
+  <table class="table table-hover table-striped">
   <thead>
     <tr class="d-flex"> 
       <th scope="col"class="col-md-2">Numéro</th>
