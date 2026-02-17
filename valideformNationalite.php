@@ -4,15 +4,18 @@ include "connexionPDO.php";
 $action=$_GET['action'];
 $num=$_POST['num'];//données du num recup sur form
 $libelle=$_POST['libelle'];//données du libellé recup sur form
+$libelle=$_POST['continent'];//données continent recup sur form
 
 if($action == "Modifier"){
-    $req=$monPdo->prepare("update nationalite set values libelle= :libelle where num =:num");
+    $req=$monPdo->prepare("update nationalite set values libelle= :libelle, numContinent= :continent where num =:num");
     $req->bindParam(':num', $num);
     $req->bindParam(':libelle', $libelle);
+    $req->bindParam(':continent', $continent);
     
 }else{
-    $req=$monPdo->prepare("insert into nationalite(libelle) values(:libelle)");
+    $req=$monPdo->prepare("insert into nationalite(libelle,numContinent) values(:libelle, :continent)");
     $req->bindParam(':libelle', $libelle);
+    $req->bindParam(':continent', $continent);
     
 }
 $nb=$req->execute();
