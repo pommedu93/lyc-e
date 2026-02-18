@@ -1,7 +1,7 @@
 <?php include "header.php";
-
-$action=$_GET['action'];// soit Ajouter ou Modifier
 include "connexionPDO.php";
+$action=$_GET['action'];// soit Ajouter ou Modifier
+
 
 if($action == "Modifier"){
     
@@ -34,7 +34,7 @@ if($action == "Modifier"){
             <select name="continent" class='form-control'>
                 <?php 
                 foreach($lescontinents as $continent) {
-                    $selection=$continent->num ==$LAnationalite->numcontinent ?'selected':'';
+                    $selection=$continent->num == $LAnationalite->numcontinent ?'selected' : '';
                     echo "<option value='$continent->num' $selection>$continent->libelle</option>";
                 }
                 ?>

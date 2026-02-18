@@ -12,7 +12,7 @@ if(!empty($_GET)){
   if($libelle != "") {$texteReq.=" and n.libelle like '%".$libelle."%'" ;}
   if($continentSelec != "Tous") {$texteReq.=" and c.num =".$continentSelec;}
 
-}
+  }
 
 
 $req=$monPdo->prepare($texteReq);
@@ -33,7 +33,7 @@ if(!empty($_SESSION['message'])){
       echo 'div class="container pt-5">
                 <div class="alert alert-'.$key.' alert-dismissible fade show" role="alert">'.$message.'
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">&times;</span>
              </button>
              </div>
           </div>';
