@@ -34,7 +34,7 @@ if($action == "Modifier"){
             <select name="continent" class='form-control'>
                 <?php 
                 foreach($lescontinents as $continent) {
-                    $selection=$continent->num ==$LAnationalite->numcontinent ?'selcted':'';
+                    $selection=$continent->num ==$LAnationalite->numcontinent ?'selected':'';
                     echo "<option value='$continent->num' $selection>$continent->libelle</option>";
                 }
                 ?>
@@ -49,4 +49,3 @@ if($action == "Modifier"){
 <?php include "footer.php";
 
 ?>
-<-gdffdf->
