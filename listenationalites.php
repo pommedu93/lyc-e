@@ -12,7 +12,7 @@ if(!empty($_GET)){
   if($libelle != "") {$texteReq.=" and n.libelle like '%".$libelle."%'" ;}
   if($continentSelec != "Tous") {$texteReq.=" and c.num =".$continentSelec;}
 
-  }
+}
 
 
 $req=$monPdo->prepare($texteReq);
@@ -39,7 +39,7 @@ if(!empty($_SESSION['message'])){
           </div>';
 
     }
-          $_SESSION['message'] =[];
+$_SESSION['message'] =[];
 }
 
 
